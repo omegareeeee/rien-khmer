@@ -21,7 +21,7 @@ model User{
   progress Progress[]
 }
 
-model Progress{ // FSRS
+model Progress{ // FSRS Card
   id String @id @default(uuid())
   
   user User @relation(fields: [userId], references: [id] )
@@ -44,6 +44,10 @@ model Progress{ // FSRS
 model Vocab{
   id String @id @default(uuid())
 
-
+  khmer String
+  english String
+  pronounce String?
+  imageUrl String? //TODO could this be an url
+  
   progress Progress[]
 }
